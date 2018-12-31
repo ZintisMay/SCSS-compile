@@ -39,10 +39,10 @@ This is going to be a small repo that demonstrates one way to compile SCSS. It s
 
 ### Step 4: To compile:
 
-npm run build-scss
+	npm run build-scss
 
 OR
 
-npm run watch-scss
+	npm run watch-scss
 
 *watch-scss will automatically compile whenever you save main.scss. so just reference main.css in your html files and your good!*
