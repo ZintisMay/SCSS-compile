@@ -1,0 +1,94 @@
+//this is importing. It allows you to combine separate SCSS and CSS files.
+//Very often there will be a master index SCSS file that imports all the CSS for your app. It can also hold all the variables you intend to use, like the background color, fonts, and text colors. 
+@import "more.scss";
+
+//This is how you declare variables
+$height: 100px;
+$width:100px;
+
+.nesting{
+
+	//This is how you use variables
+	height:$height;
+	width:$width;
+
+	//You can use nesting to select elements within other elements. 
+	.looksLike{
+
+		//You can go deeper; this selector looks like ".nesting .looksLike .this" in normal CSS
+		.this{
+			color:green;
+		}
+	}
+
+	//The & operator allow you to select the SAME element, with additional classes
+	//In this case, it's selecting ".nesting#blackBack"
+	&#blackBack{
+		background-color:black;
+	}
+}
+
+//This is how you extend. It's like a chunk of CSS you want to use more than once.
+%extendingThisCSS{
+	height:100px;
+	width:100px;
+}
+
+.redBox{
+
+	//This is how to extend. 
+	@extend %extendingThisCSS;
+	background-color:red;
+}
+
+//This is a mixin. It lets you take a variable (property), and then use it to cover various browser-specific CSS. 
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+
+.box { @include transform(rotate(30deg)); }
+
+
+// CSS///////////////////////////////////////
+
+.stuffIThinkYouShouldKnow{
+
+	background-image:url();
+	background-size:cover;  //Cover, contain... there are others, but those are the big ones.
+	background-position:top right; //Could be top, bottom, left, right, center, or %'s
+
+	height:0; //%, vh, vw, px are the major measurements
+	//% is based on the parent's size
+	//vh & vw are based on the size of the screen
+	//px is just a set amount
+
+	max-height:0;
+	max-width:0;
+	min-height:0;
+	min-width:0;
+	//These let you prevent elements that have a variable width and height (like % or VW) from growing or shrinking beyond a certain point. It means that you can write fewer media queries when making a page mobile-responsive.
+
+
+	width:calc(100% - 15px);
+	//This is calc. You can replace values with it and do some math. Occasionally you'll have a use for it.
+
+	margin-left:auto;
+	margin-right:auto;
+	//This is how to center an element horizontally only.
+
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	//This is how you center the contents of an element, veritcally and horizontally. Remember that if you don't define a height and width, the element might only be the height of it's children.
+
+	position: relative; //on parent
+	position:absolute;
+	left:50%;
+	top:50%;
+	transform:translate(-50%, -50%);
+	//This is another way to center an element, but you should probably define the height and width of the parent. 
+
+
+}

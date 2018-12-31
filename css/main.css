@@ -1,0 +1,43 @@
+* {
+  outline: 1px dotted black; }
+
+.nesting {
+  height: 100px;
+  width: 100px; }
+  .nesting .looksLike .this {
+    color: green; }
+  .nesting#blackBack {
+    background-color: black; }
+
+.redBox {
+  height: 100px;
+  width: 100px; }
+
+.redBox {
+  background-color: red; }
+
+.box {
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg); }
+
+.stuffIThinkYouShouldKnow {
+  background-image: url();
+  background-size: cover;
+  background-position: top right;
+  height: 0;
+  max-height: 0;
+  max-width: 0;
+  min-height: 0;
+  min-width: 0;
+  width: calc(100% - 15px);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
