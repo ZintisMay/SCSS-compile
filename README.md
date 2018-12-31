@@ -3,31 +3,31 @@ Hi all,
 This is going to be a small repo that demonstrates one way to compile SCSS. It should be pretty easy to get it up and running on your own machines.
 
 
-##To get this repo working:
+## To get this repo working:
 
-###Step 1:
+### Step 1:
 
 	npm install
 
-###Step 2:
+### Step 2:
 
 	npm run watch-scss
 
-###Step 4:
+### Step 4:
 
 	Open the index.html in browser, edit main.scss and more.scss to try it out.
 
-##To get it up and running from an empty repo:
+## To get it up and running from an empty repo:
 
-###Step 1:
+### Step 1:
 
 	npm init
 
-###Step 2:
+### Step 2:
 
 	npm install nodemon node-sass
 
-###Step 3: in package.json, "scripts", add these lines:
+### Step 3: in package.json, "scripts", add these lines:
 
 
      "build-scss": "node-sass --include-path scss scss/main.scss css/main.css",
@@ -37,7 +37,7 @@ This is going to be a small repo that demonstrates one way to compile SCSS. It s
 
 *You might need to change the file pathing to match your project. This one assumes you have two folders (/css and /scss), and a file (/scss/main.scss).* 
 
-###Step 4: To compile:
+### Step 4: To compile:
 
 npm run build-scss
 
